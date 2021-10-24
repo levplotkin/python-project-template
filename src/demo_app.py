@@ -8,6 +8,9 @@ class Demo:
     def set_val(self, param):
         self.val = param
 
+    def validate(self):
+        raise SystemError(1)
+
 
 demo = Demo()
 demo.set_val("demo ready")
