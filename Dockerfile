@@ -9,7 +9,7 @@ FROM python:3.8-slim
 
 COPY --from=builder /root/.local /root/.local
 COPY . .
-RUN  python -m pytest ./tests
+RUN  python -m pytest -m "not e2e" ./tests
 ENV PATH=/root/.local:$PATH
 WORKDIR /demo_app
 CMD [ "python", "-m" , "demo_app" ]

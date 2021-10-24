@@ -1,13 +1,5 @@
 import pytest
 
-from demo_app.demo_app import Demo
-
-
-@pytest.fixture
-def demo_fixture():
-    "Provides a Demo object"
-    return Demo()
-
 
 def test_something(demo_fixture):
     demo_fixture.set_val("val")
@@ -17,3 +9,8 @@ def test_something(demo_fixture):
 def test_validation_raises_error(demo_fixture):
     with pytest.raises(SystemError):
         demo_fixture.validate()
+
+
+@pytest.mark.e2e
+def test_e2e(demo_fixture):
+    pass
