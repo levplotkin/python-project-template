@@ -1,7 +1,7 @@
-from src.app import Demo
+from src.demo_app import Demo
 
 
-def test_something(self):
+def test_something():
     demo = Demo()
-    demo.setVal("val")
-    assert "val" == demo.getVal()
+    demo.set_val("val")
+    assert "val" == demo.get_val()

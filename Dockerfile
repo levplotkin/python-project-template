@@ -6,10 +6,11 @@ RUN pip install --user -r requirements.txt
 
 
 FROM python:3.8-slim
-WORKDIR /app
+WORKDIR /demo-app
 
 COPY --from=builder /root/.local /root/.local
-COPY ./src .
-
+COPY ./test ./test
+COPY ./src ./src
+RUN  python -m pytest ./test
 ENV PATH=/root/.local:$PATH
-CMD [ "python", "./demo-app.py" ]
+CMD [ "python", "./src/demo_app.py" ]
