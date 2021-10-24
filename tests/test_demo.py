@@ -1,6 +1,6 @@
 import pytest
 
-from src.demo_app import Demo
+from demo_app.demo_app import Demo
 
 
 @pytest.fixture
