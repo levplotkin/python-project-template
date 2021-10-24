@@ -14,3 +14,8 @@ def test_validation_raises_error(demo_fixture):
 @pytest.mark.e2e
 def test_e2e(demo_fixture):
     pass
+
+
+@pytest.mark.skip("not implemented")
+def test_not_implemented(demo_fixture):
+    pass
